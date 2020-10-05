@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-func loadConfig(data interface{}) {
-	file, err := os.OpenFile("reflect/ini/conf.ini", os.O_RDONLY, 0644)
+func LoadConfig(filePath string, data interface{}) {
+	file, err := os.OpenFile(filePath, os.O_RDONLY, 0644)
 	if err != nil {
 		fmt.Println("read err:", err)
 		return
