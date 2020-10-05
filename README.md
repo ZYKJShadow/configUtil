@@ -44,10 +44,13 @@ type Config struct {
 
 func main() {
   //将封装好的struct传入
-var config Config
-//参数1：配置文件的路径，指的是GO_PATH/src/下的路径，例如GO_PATH/src/goProject/config.ini，则传入如下所示
-//参数2：结构体指针，一定要传指针
-configUtil.LoadConfig("goProject/config.ini", &config)
+  var c Config
+  //参数1：配置文件的路径，指的是GO_PATH/src/下的路径，例如GO_PATH/src/goProject/config.ini，则传入如下所示
+  //参数2：结构体指针，一定要传指针
+  configUtil.LoadConfig("goProject/config.ini", &c)
+  fmt.Println(c.Mysql,c.Redis)
+  
+  输出结果：{localhost 3306 root root} {localhost 6379 root 0}
 }
 ```
 
